@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3ALAM - Contact</title>
+    <!-- FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ملف الـ CSS الرئيسي وديال صفحة الكونتاكت -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-house"></i>
+            <div>
+                <h2>M3ALAM</h2>
+                <span>DAR</span>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="../index.html">Accueil</a>
+            <a href="../services/services.html">Services</a>
+            <a href="../index.html#how-it-works">Comment ça marche</a>
+            <a href="../devenir-reparateur/devenir-reparateur.html">Devenir réparateur</a> 
+            <a href="../À propos/propos.html">À propos</a>
+            <a href="" class="active">Contact</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="tel:+212701220768" class="urgence-btn">
+                <i class="fa-solid fa-truck-medical"></i> <span>Urgence</span>
+            </a>
+            <button class="login-btn">Se connecter</button>
+        </div>
+
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- ====== SECTION CONTACT ====== -->
+    <section class="contact-section">
+        <div class="contact-wrapper">
+            
+            <!-- 1. معلومات الاتصال الجانبية -->
+            <div class="contact-info">
+                <h2>Contactez-nous</h2>
+                <p>Une question ? Un partenariat ? Ou besoin d'assistance ? Notre équipe est là pour vous répondre dans les plus brefs délais.</p>
+                
+                <div class="info-links">
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>+212 701 220 768</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@m3alamdar.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+212 701 220 768</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-socials">
+                    <a href="https://wa.me/212701220768" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- 2. فورم إرسال الرسائل -->
+            <div class="contact-form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="contactName" placeholder="Nom complet" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="contactEmail" placeholder="Votre Adresse Email" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-pen"></i>
+                        <input type="text" id="contactSubject" placeholder="Sujet" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contactMessage" rows="5" placeholder="Votre message..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Envoyer le message</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== SCRIPT HAMBURGER MENU ====== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.querySelector(".hamburger");
+            const menu = document.querySelector(".menu");
+
+            if (hamburger && menu) {
+                hamburger.addEventListener("click", () => {
+                    menu.classList.toggle("show");
+                    menu.classList.toggle("active");
+                });
+            }
+        });
+    </script>
+</body>
+</html>

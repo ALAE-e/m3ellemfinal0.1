@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3ALAM - Devenir Réparateur</title>
+    <!-- FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ملف الـ CSS الرئيسي ديالك -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- ملف الـ CSS الجديد الخاص بهاد الصفحة -->
+    <link rel="stylesheet" href="reparateur.css">
+</head>
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+<!-- ====== NAVBAR CORRECTE POUR SERVICES.HTML ====== -->
+<header class="navbar">
+    <!-- اللوغو -->
+    <div class="logo">
+        <i class="fa-solid fa-house"></i>
+        <div>
+            <h2>M3ALAM</h2>
+            <span>DAR</span>
+        </div>
+    </div>
+
+    <!-- الروابط مع النقط للرجوع للخلف حيت الصفحة وسط فولدر -->
+    <nav class="menu">
+        <a href="../index.html">Accueil</a>
+        <a href="../services/services.html" class="active">Services</a>
+        <a href="../index.html#how-it-works">Comment ça marche</a>
+        <a href="../devenir-reparateur/devenir-reparateur.html">Devenir réparateur</a> 
+        <a href="../À propos/propos.html">À propos</a>
+        <a href="../contacts/contact.html">Contact</a>
+    </nav>
+
+    <!-- الأزرار د اليمين المصلحة للموبايل -->
+    <div class="nav-right">
+        <!-- 🚨 بوتون الاستعجال الجديد -->
+        <a href="tel:+212701220768" class="urgence-btn">
+            <i class="fa-solid fa-truck-medical"></i> <span>Urgence</span>
+        </a>
+        <button class="login-btn">Se connecter</button>
+    </div>
+
+    <!-- الـ Hamburger menu اللي غايبان ف الموبايل -->
+    <div class="hamburger">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+</header>
+    <!-- ====== SECTION FORMULAIRE ====== -->
+    <section class="reparateur-section">
+        <div class="reparateur-container">
+            <h2>Rejoignez M3ALAM</h2>
+            <p>Inscrivez-vous pour recevoir des chantiers et augmenter vos revenus</p>
+            
+            <form id="reparateurForm">
+                <div class="form-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="repName" placeholder="Nom complet" required>
+                </div>
+                
+                <div class="form-group">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" id="repPhone" placeholder="Numéro de téléphone" required>
+                </div>
+                
+                <div class="form-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="repCity" placeholder="Votre Ville / Quartier" required>
+                </div>
+                
+                <div class="form-group">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <select id="repSpecialty" required>
+                        <option value="" disabled selected>Choisir votre métier</option>
+                        <option value="Plombier">Plombier (سباك)</option>
+                        <option value="Électricien">Électricien (كهربائي)</option>
+                        <option value="Climatisation">Climatisation (مكيفات)</option>
+                        <option value="Peintre">Peintre (صباغ)</option>
+                        <option value="Menuisier">Réparation Chauffe-eau (إصلاح سخان المياه) </option>
+                        <option value="Menuisier">Électroménager (الأجهزة المنزلية) </option>
+                        <option value="Menuisier">Menuisier (نجار)</option>
+                        <option value="Menuisier">Nettoyage  (التنظيف)</option>
+                    </select>
+                </div>
+
+                <div class="form-group-file">
+                        <label for="repCV"><i class="fa-solid fa-file-pdf"></i> Votre CV (PDF, JPG, PNG)</label>
+                        <input type="file" id="repCV" accept=".pdf, .png, .jpg, .jpeg" required>
+                </div>
+                
+                <button type="submit" class="submit-btn">Envoyer ma candidature</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ====== FIREBASE SDKS ====== -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+    <!-- ====== ملف الـ JS الجديد ديالنا ====== -->
+    <script src="reparateur.js"></script>
+    <script src="../main.js"></script>
+</body>
+</html>

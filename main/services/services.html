@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3alam Dar - Nos Services</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+<body>
+
+<!-- ====== NAVBAR CORRECTE POUR SERVICES.HTML ====== -->
+<header class="navbar">
+    <!-- اللوغو -->
+    <div class="logo">
+        <i class="fa-solid fa-house"></i>
+        <div>
+            <h2>M3ALAM</h2>
+            <span>DAR</span>
+        </div>
+    </div>
+
+    <!-- الروابط مع النقط للرجوع للخلف حيت الصفحة وسط فولدر -->
+    <nav class="menu">
+        <a href="../index.html">Accueil</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="../index.html#how-it-works">Comment ça marche</a>
+        <a href="../devenir-reparateur/devenir-reparateur.html">Devenir réparateur</a> 
+        <a href="../À propos/propos.html">À propos</a>
+        <a href="https://wa.me/212701220768" target="_blank">Contact</a>
+    </nav>
+
+    <!-- الأزرار د اليمين المصلحة للموبايل -->
+    <div class="nav-right">
+        <!-- 🚨 بوتون الاستعجال الجديد -->
+        <a href="tel:+212701220768" class="urgence-btn">
+            <i class="fa-solid fa-truck-medical"></i> <span>Urgence</span>
+        </a>
+        <button class="login-btn">Se connecter</button>
+    </div>
+
+    <!-- الـ Hamburger menu اللي غايبان ف الموبايل -->
+    <div class="hamburger">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+</header>
+<main class="services-page-container">
+        
+        <div class="services-header">
+            <h1>Nos Services de Réparation</h1>
+            <p>Trouvez le bon m3alam pour tous vos besoins de la maison. Un travail professionnel et garanti.</p>
+        </div>
+
+        <div class="services-grid-page">
+            
+            <div class="service-page-card">
+                <div class="service-img-wrapper">
+                    <img src="https://edito.seloger.com/sites/default/files/styles/735x412/public/edito_migrate/article/image/plombier-travaux.jpg.webp?itok=TyewpenM" alt="Plomberie">
+                </div>
+                <div class="service-page-info">
+                    <h3>Plomberie</h3>
+                    <p>Débouchage de canalisations, réparation de fuites d'eau, installation de robinetterie et chauffe-eau.</p>
+                    <button class="service-btn" onclick="handleServiceSelection()">Demander un devis</button>
+                </div>
+            </div>
+
+            <div class="service-page-card">
+                <div class="service-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=500" alt="Électricité">
+                </div>
+                <div class="service-page-info">
+                    <h3>Électricité</h3>
+                    <p>Dépannage de pannes électriques, installation de prises, de disjoncteurs ou de tableaux électriques.</p>
+                    <button class="service-btn" onclick="handleServiceSelection()">Demander un devis</button>
+                </div>
+            </div>
+
+            <div class="service-page-card">
+                <div class="service-img-wrapper">
+                    <img src="https://www.espace-aubade.fr/uploads/blog/parts/885x575/tout-savoir-sur-la-climatisation-cassette-8.jpg" alt="Climatisation">
+                </div>
+                <div class="service-page-info">
+                    <h3>Climatisation</h3>
+                    <p>Installation de climatiseurs, recharge de gaz, entretien annuel et nettoyage des filtres.</p>
+                    <button class="service-btn" onclick="handleServiceSelection()">Demander un devis</button>
+                </div>
+            </div>
+
+            <div class="service-page-card">
+                <div class="service-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=500" alt="Peinture">
+                </div>
+                <div class="service-page-info">
+                    <h3>Peinture</h3>
+                    <p>Peinture de pièces, réparation de fissures, pose de papier peint et rénovation de façades.</p>
+                    <button class="service-btn" onclick="handleServiceSelection()">Demander un devis</button>
+                </div>
+            </div>
+
+            <div class="service-page-card">
+                <div class="service-img-wrapper">
+                    <img src="https://www.blog-aterno.com/medias/plombier-reparation-chauffe-eau-600x400.jpg" alt="Réparation Chauffe-eau">
+                </div>
+                <div class="service-page-info">
+                    <h3>Réparation Chauffe-eau</h3>
+                    <p>Dépannage de pannes de chauffe-eau à gaz ou électrique, détartrage et remplacement de pièces.</p>
+                    <button class="service-btn" onclick="handleServiceSelection()">Demander un devis</button>
+                </div>
+            </div>
+
+            <div class="service-page-card">
+                <div class="service-img-wrapper">
+                    <img src="https://www.depotelectromenager.fr/public/img/big/AdobeStock198659488jpeg64536fc0b1ec7jpeg_6461f8f4c4775.jpeg" alt="Électroménager">
+                </div>
+                <div class="service-page-info">
+                    <h3>Électroménager</h3>
+                    <p>Réparation de machines à laver, lave-vaisselle, réfrigérateurs, fours et micro-ondes.</p>
+                    <button class="service-btn" onclick="handleServiceSelection()">Demander un devis</button>
+                </div>
+            </div>
+
+            <div class="service-page-card">
+                <div class="service-img-wrapper">
+                    <img src="https://i0.wp.com/ringtwice.fr/wp-content/uploads/sites/4/2022/11/menuisier.jpg?resize=640%2C452&ssl=1" alt="Menuiserie">
+                </div>
+                <div class="service-page-info">
+                    <h3>Menuiserie</h3>
+                    <p>Réparation de portes, fenêtres, placards, montage de meubles et travaux de bois sur mesure.</p>
+                    <button class="service-btn" onclick="handleServiceSelection()">Demander un devis</button>
+                </div>
+            </div>
+
+            <div class="service-page-card">
+                <div class="service-img-wrapper">
+                    <img src="https://www.lecedre.fr/wp-content/uploads/elementor/thumbs/regles_hygiene_nettoyage_desinfection_assainissement_1-scaled-rlcxn6789zuuse4nr3mxo48js7omh2win0qn6jzrgk.jpeg" alt="Hygiène & Nettoyage">
+                </div>
+                <div class="service-page-info">
+                    <h3>Nettoyage</h3>
+                    <p>Nettoyage approfondi de maisons, désinfection, assainissement et lavage de tapis/canapés.</p>
+                    <button class="service-btn" onclick="handleServiceSelection()">Demander un devis</button>
+                </div>
+            </div>
+
+        </div> 
+    </main>
+
+    <div id="modalForm" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeFormBtn">&times;</span>
+            <h2>Demande d'intervention</h2>
+            <p>Veuillez remplir vos informations pour vous contacter.</p>
+            
+            <form id="clientForm">
+                <div class="form-group">
+                    <label for="clientName">Nom Complet :</label>
+                    <input type="text" id="clientName" placeholder="Ex: Ahmed Alami" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Numéro de Téléphone :</label>
+                    <input type="tel" id="clientPhone" placeholder="Ex: 0612345678" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientLocation">Votre Ville / Localisation :</label>
+                    <input type="text" id="clientLocation" placeholder="Ex: Casablanca, Maarif" required>
+                </div>
+                <button type="submit" class="submit-btn">Envoyer la demande</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+    <script src="services.js"></script>
+    <script src="../main.js"></script>
+</body>
+</html>

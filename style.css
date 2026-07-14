@@ -1,0 +1,1176 @@
+/* General Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background: #f7f9fc;
+    color: #111827;
+    /* 100px dial padding-top katkhli l-hero maytkhbach t7t l-menu fixed */
+    padding-top: 100px; 
+}
+
+/* Navbar Style (Fixed) */
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; /* Khdmat f blast width:100% bach t-eviter moshkil horizontal scroll */
+    z-index: 1000; /* Katkhli l-menu dima ybqa l-foq */
+    background: white;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ececec;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0; /* كتحمي اللوغو باش ما يتفركش ف التيليفون */
+}
+
+.logo i{
+    color: #2563eb;
+    font-size: 35px;
+}
+
+.logo h2{
+    font-size: 20px;
+    color: #1e3a8a;
+}
+
+.logo span{
+    color: #2563eb;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Menu Links */
+.menu {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    /* زدنا padding لتحت باش نخلقو بلاصة فين غايبان الخط بلا ما يدفع الكلمة */
+    padding-bottom: 6px; 
+    /* درنا خط شفاف ف اللول باش ملي يزراق ما يحركش الـ Menu */
+    border-bottom: 3px solid transparent; 
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover و Active كيبدلو غير اللون والخط بلا ما يغلضو الكلمة باش ما يتحرك والو */
+.menu a:hover,
+.menu a.active {
+    color: #2563eb;
+    border-bottom: 3px solid #2563eb;
+}
+
+.nav-right{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* ====== 🚨 ستايل زر الاستعجال الجديد ====== */
+.urgence-btn {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: #ffffff !important;
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.15);
+    transition: all 0.3s ease;
+}
+
+.urgence-btn:hover {
+    background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+    transform: translateY(-1px);
+}
+
+.login-btn{
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #1d4ed8;
+}
+
+.hamburger{
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #2563eb;
+    flex-shrink: 0;
+}
+
+/* ====== 📱 Responsive Media Query ====== */
+@media(max-width:1100px){
+    .navbar {
+        padding: 15px 4%; /* تقليص الحواف باش نربحو اتساع */
+    }
+
+    .hamburger{
+        display: block;
+        margin-left: 10px;
+    }
+
+    /* الـ nav-right غاتبقى باينة ومجموع فيها الـ Urgence والـ Login */
+    .nav-right{
+        display: flex; 
+        gap: 10px;
+    }
+
+    .menu{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        gap: 0;
+        border-top: 1px solid #ececec;
+        display: none;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+    }
+
+    .menu a{
+        padding: 18px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #ececec;
+    }
+
+    .menu.show, .menu.active {
+        display: flex;
+    }
+}
+
+/* تظبيط إضافي للهواتف الصغيرة بزاف (أقل من 500px) باش ما يوقعش بحال image_22ff7c.png */
+@media(max-width: 500px) {
+    .navbar {
+        padding: 15px 3%;
+    }
+    .logo h2 {
+        font-size: 16px; /* تصغير اللوغو شوية باش يخلي البلاصة */
+    }
+    .urgence-btn span {
+        display: none; /* إخفاء كلمة Urgence وتخلي غير الأيقونة ف الشاشات الصغيرة بزاف */
+    }
+    .urgence-btn {
+        padding: 10px;
+    }
+    .login-btn {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+}
+
+/* Hero Section */
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 6%;
+    gap: 60px;
+}
+
+.hero-left{
+    flex: 1;
+}
+
+.badge{
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero h1{
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span{
+    color: #2563eb;
+}
+
+.hero p{
+    color: #6b7280;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+.hero-buttons{
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.primary{
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.secondary{
+    border: none;
+    background: white;
+    padding: 16px 24px;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.clients{
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatars{
+    display: flex;
+}
+
+.avatars img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-left: -10px;
+}
+
+.stars{
+    color: #fbbf24;
+}
+
+.hero-right{
+    flex: 1;
+    position: relative;
+}
+
+.hero-right img{
+    width: 100%;
+    border-radius: 25px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.floating-card{
+    position: absolute;
+    right: -10px;
+    top: 120px;
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Services Section */
+.services{
+    padding: 0 6% 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.service-card{
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 22px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); 
+}
+.icon{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.water{ background: #eff6ff; color: #2563eb; }
+.electric{ background: #eef2ff; color: #2563eb; }
+.gas{ background: #fff7ed; color: #f97316; }
+.cold{ background: #eff6ff; color: #2563eb; }
+.repair{ background: #f3f4f6; color: #374151; }
+
+.service-card p{
+    color: #6b7280;
+    margin: 10px 0;
+}
+
+.service-card a{
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+
+
+
+
+/* ====== ستايل صندوق وزر "المزيد" ====== */
+.services-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* الكريد كيبقى منظم للمحتوى فقط */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px; /* مسافة أمان بين الكارطات والبوتون */
+}
+
+/* تنسيق البوتون الجديد */
+.more-services-box {
+    display: flex;
+    justify-content: center; /* كايجيب البوتون ف السنتر نيشان */
+    margin-top: 20px;
+}
+
+.view-all-btn {
+    background: #ffffff;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+    padding: 14px 30px;
+    border-radius: 50px; /* شكل دائري أنيق */
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.05);
+}
+
+/* تأثير الـ Hover ملي كيدوز عليه الكليان الماوس */
+.view-all-btn:hover {
+    background: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.2);
+    transform: translateY(-2px);
+}
+
+.view-all-btn i {
+    transition: transform 0.3s ease;
+}
+
+.view-all-btn:hover i {
+    transform: translateX(4px); /* السهم كايتحرك شوية لليمين كايعطي انيميشن واعر */
+}
+/* Features Section */
+.features{
+    margin: 40px 6%;
+    background: white;
+    border-radius: 24px;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.feature{
+    display: flex;
+    gap: 15px;
+}
+
+.feature i{
+    color: #2563eb;
+    font-size: 28px;
+}
+
+/* Responsive Design */
+@media(max-width:1100px){
+    .hero{
+        flex-direction: column;
+    }
+    .services{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .features{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .menu{
+        display: none; /* Menu kaykhba f tablets/mobile, khassu hamburger menu b js */
+    }
+}
+
+@media(max-width:700px){
+    .services,
+    .features{
+        grid-template-columns: 1fr;
+    }
+    .hero h1{
+        font-size: 42px;
+    }
+    .hero-buttons{
+        flex-direction: column;
+    }
+}
+
+
+/*serveces*/
+.phone{
+    font-size: 14px;
+}
+
+.login-btn{
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #1d4ed8;
+}
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 6%;
+    gap: 60px;
+}
+
+.hero-left{
+    flex: 1;
+}
+
+.badge{
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero h1{
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span{
+    color: #2563eb;
+}
+
+.hero p{
+    color: #6b7280;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+.hero-buttons{
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.primary{
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.secondary{
+    border: none;
+    background: white;
+    padding: 16px 24px;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.clients{
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatars{
+    display: flex;
+}
+
+.avatars img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-left: -10px;
+}
+
+.stars{
+    color: #fbbf24;
+}
+
+.hero-right{
+    flex: 1;
+    position: relative;
+}
+
+.hero-right img{
+    width: 100%;
+    border-radius: 25px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.floating-card{
+    position: absolute;
+    right: -10px;
+    top: 120px;
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.services{
+    padding: 0 6% 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.service-card{
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 22px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.icon{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.water{ background: #eff6ff; color: #2563eb; }
+.electric{ background: #eef2ff; color: #2563eb; }
+.gas{ background: #fff7ed; color: #f97316; }
+.cold{ background: #eff6ff; color: #2563eb; }
+.repair{ background: #f3f4f6; color: #374151; }
+
+.service-card p{
+    color: #6b7280;
+    margin: 10px 0;
+}
+
+.service-card a{
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.features{
+    margin: 40px 6%;
+    background: white;
+    border-radius: 24px;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.feature{
+    display: flex;
+    gap: 15px;
+}
+
+.feature i{
+    color: #2563eb;
+    font-size: 28px;
+}
+
+@media(max-width:1100px){
+    .hero{
+        flex-direction: column;
+    }
+    .services{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .features{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .menu{
+        display: none;
+    }
+}
+
+@media(max-width:700px){
+    .services,
+    .features{
+        grid-template-columns: 1fr;
+    }
+    .hero h1{
+        font-size: 42px;
+    }
+    .hero-buttons{
+        flex-direction: column;
+    }
+}
+
+
+.services-page-container {
+    width: 88%;
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.services-header h1 {
+    font-size: 50px;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+.services-header p {
+    color: #6b7280;
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.services-grid-page {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.service-page-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    border: 1px solid #ececec;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-page-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.service-img-wrapper {
+    width: 100%;
+    height: 200px;
+}
+
+.service-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-page-info {
+    padding: 25px;
+}
+
+.service-page-info h3 {
+    font-size: 22px;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.service-page-info p {
+    color: #4b5563;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* تحسين الـ Grid باش يتناسق ف كاع الشاشات */
+@media(max-width: 1024px) {
+    .services-grid-page {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 680px) {
+    .services-grid-page {
+        grid-template-columns: 1fr;
+    }
+    .services-header h1 {
+        font-size: 34px;
+    }
+}
+
+.service-btn {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.service-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Responsive dial page services */
+@media(max-width: 960px) {
+}
+
+@media(max-width: 650px) {
+    .services-header h1 {
+        font-size: 30px;
+    }
+}
+
+
+/*popup btn*/
+.modal{
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content{
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+}
+button{
+    cursor: pointer;
+}
+
+/*footer*/
+/* ====== STYLES FOOTER ====== */
+.main-footer {
+    background-color: #1e293b; /* لون غامق أنيق احترافي */
+    color: #f8fafc;
+    padding: 40px 0 20px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-about, .footer-links, .footer-contact {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* ستايل اللوغو وسط الفوتر */
+.main-footer .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #3b82f6; /* اللون الأزرق د السيت */
+    margin-bottom: 15px;
+}
+
+.main-footer .logo h2 {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1;
+    color: #ffffff;
+}
+
+.main-footer .logo span {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #3b82f6;
+}
+
+.footer-about p {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* روابط الفوتر */
+.footer-links h3, .footer-contact h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #3b82f6;
+}
+
+/* الاتصال والشبكات الاجتماعية */
+.footer-contact p {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.footer-socials a {
+    color: #ffffff;
+    background: #334155;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    background: #3b82f6;
+    transform: translateY(-3px);
+}
+
+/* حقوق الملكية لتحت */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* متجاوب مع الهواتف */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-footer .logo, .footer-contact p {
+        justify-content: center;
+    }
+    .footer-socials {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+/* popup*/
+
+/* Overlay */
+.modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+/* Box */
+.modal-content{
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 24px;
+    padding: 35px;
+    position: relative;
+    animation: popup .3s ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,.15);
+}
+
+/* Animation */
+@keyframes popup{
+    from{
+        opacity: 0;
+        transform: translateY(20px) scale(.95);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-content h2{
+    font-size: 28px;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.modal-content p{
+    color: #6b7280;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Close */
+.close-btn{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    color: #9ca3af;
+    transition: .2s;
+}
+
+.close-btn:hover{
+    color: #ef4444;
+}
+
+/* Inputs */
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-group label{
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-group input{
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    transition: .2s;
+}
+
+.form-group input:focus{
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+
+/* Button */
+.submit-btn{
+    width: 100%;
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 15px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.submit-btn:hover{
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media(max-width:600px){
+
+    .modal-content{
+        padding: 25px;
+        border-radius: 18px;
+    }
+
+    .modal-content h2{
+        font-size: 22px;
+    }
+}
+
+/* comonsamarch 3wtani css hh*/
+
+/* ====== Comment ça marche Styles ====== */
+.how-it-works {
+    padding: 80px 6%;
+    background: #ffffff;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.section-title p {
+    color: #6b7280;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    position: relative;
+}
+
+.step-card {
+    background: #f8fafc;
+    padding: 40px 30px;
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* رقم الخطوة اللي كيبان الفوق */
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2563eb;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.step-icon {
+    font-size: 40px;
+    color: #2563eb;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.step-card h3 {
+    font-size: 20px;
+    color: #111827;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.step-card p {
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* دعم الهواتف والشاشات الصغيرة */
+@media (max-width: 960px) {
+    .steps-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+html {
+    scroll-behavior: smooth; /* 👈 هادي كتعطي هذيك الهبطة المرنة والزوينة */
+}
+
+
+
